@@ -608,6 +608,7 @@ sine:
   Args: [freq, amp]
   Description: Simple sine oscillator.
   Outputs: 1
+  Link: /hello
 slice:
   Args: [trig, id, vals, buf]
   Description: in-memory slice based sampler

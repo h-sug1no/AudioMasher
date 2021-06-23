@@ -132,7 +132,7 @@ ugen_ref = {
 'set': { 'Args': [ 'value', 'name' ], 'Outputs': 1 , 'Description': 'sets variable'},
 'setdurs': { 'Args': [ 'size' ], 'Outputs': 1 , 'Description': 'set total duration (in samples)'},
 'sget': { 'Args': [ 'index', 'ftname' ], 'Outputs': 1 , 'Description': 'picks a string from a string list'},
-'sine': { 'Args': [ 'freq', 'amp' ], 'Outputs': 1 , 'Description': 'Simple sine oscillator.'},
+'sine': { 'Args': [ 'freq', 'amp' ], 'Outputs': 1 , 'Link': '/hello' , 'Description': 'Simple sine oscillator.'},
 'slice': { 'Args': [ 'trig', 'id', 'vals', 'buf' ], 'Outputs': 1 , 'Description': 'in-memory slice based sampler'},
 'slick': { 'Args': [ 'ftname' ], 'Outputs': 1 , 'Description': 'picks a string randomly from string list'},
 'smoothdelay': { 'Args': [ 'in(f) fdbk(f) del(f) maxdel(f) interp' ], 'Outputs': 1 , 'Description': 'smooth delay line'},
