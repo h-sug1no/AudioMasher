@@ -57,6 +57,8 @@ for ugen in data:
 	if 'Args' in ugen:
 		jsUgen += ', '.join("'{0}'".format(a) for a in ugen['Args'])
 	jsUgen += " ], 'Outputs': " + str(ugen['Outputs'])
+	if 'Link' in ugen:
+		jsUgen += " , 'Link': '" + ugen['Link'] + "'"
 	jsUgen += " , 'Description': '" + ugen['Description'].replace("'","\\'") + "'}"
 	jsUgens.append(jsUgen)
 

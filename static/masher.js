@@ -179,7 +179,10 @@ function updateTooltip() {
 	if ("Args" in info) {
 		out += info["Args"].join(", ") + " ";
 	}
-	out += "<b>" + word + "</b><br><i>" + info["Description"] + "</i>";
+	const learnRef = ("Link" in info)
+	  ? `<a href="/learn/ugens_${info.Link}" target="__am_tooltip_learn__"><b>${word}</b></a>`
+	  : `<b>${word}</b>`;
+	out += learnRef + "<br><i>" + info["Description"] + "</i>";
 	updateTooltipPos();
 	showTooltip(out);
 }

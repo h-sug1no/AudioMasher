@@ -213,6 +213,11 @@ a.tab_thumb {
 	top: 10px;
 	bottom: auto;
 }
+
+#tooltip a {
+	text-decoration: underline;
+}
+
 .learn #tooltip, .learn #errors {
 	bottom: 81px;
 }
