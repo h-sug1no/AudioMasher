@@ -244,6 +244,7 @@ dup:
   Args: [f]
   Description: Duplicates last item on the stack.
   Outputs: 2
+  Link: /operations
 dup2:
   Link: dup2
   Args: [f, f]
@@ -564,6 +565,7 @@ rot:
   Args: [f, f, f]
   Description: 'Stack rotate. s: 1 2 3 -> 2 3 1'
   Outputs: 3
+  Link: /operations
 round:
   Args: [v1]
   Description: Performs rounding to nearest integer.
@@ -643,6 +645,7 @@ swap:
   Args: [f, f]
   Description: Swaps last two items on the stack.
   Outputs: 2
+  Link: /operations
 switch:
   Args: [trig, sig1, sig2]
   Description: toggle between two signals
