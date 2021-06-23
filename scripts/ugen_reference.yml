@@ -470,6 +470,7 @@ p:
   Args: [num]
   Description: p register get
   Outputs: 1
+  Link: /pregisters
 palias:
   Args: [name, index]
   Description: create a variable alias for p-value
@@ -525,6 +526,7 @@ pset:
   Args: [val, num]
   Description: p register set
   Outputs: 1
+  Link: /pregisters
 pshift:
   Args: [in, shift (semitones), window size (samps), xfade (samps)]
   Description: pitch shifter
