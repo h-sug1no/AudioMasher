@@ -600,6 +600,7 @@ set:
   Args: [value, name]
   Description: sets variable
   Outputs: 1
+  Link: /variables
 setdurs:
   Args: [size]
   Description: set total duration (in samples)

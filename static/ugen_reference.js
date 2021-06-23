@@ -129,7 +129,7 @@ ugen_ref = {
 'saturator': { 'Args': [ 'in', 'drive', 'dcoffset' ], 'Outputs': 1 , 'Description': 'saturator distortion unit'},
 'scale': { 'Args': [ 'v1', 'min', 'max' ], 'Outputs': 1 , 'Description': 'Scales from unipolar [0, 1] to [min, max].'},
 'sdelay': { 'Args': [ 'delay' ], 'Outputs': 1 , 'Description': 'delay (in samples)'},
-'set': { 'Args': [ 'value', 'name' ], 'Outputs': 1 , 'Description': 'sets variable'},
+'set': { 'Args': [ 'value', 'name' ], 'Outputs': 1 , 'Link': '/variables' , 'Description': 'sets variable'},
 'setdurs': { 'Args': [ 'size' ], 'Outputs': 1 , 'Description': 'set total duration (in samples)'},
 'sget': { 'Args': [ 'index', 'ftname' ], 'Outputs': 1 , 'Description': 'picks a string from a string list'},
 'sine': { 'Args': [ 'freq', 'amp' ], 'Outputs': 1 , 'Link': '/hello' , 'Description': 'Simple sine oscillator.'},
