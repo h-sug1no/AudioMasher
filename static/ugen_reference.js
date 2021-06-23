@@ -148,7 +148,7 @@ ugen_ref = {
 'talias': { 'Args': [ 'name', 'index', 'ftbl' ], 'Outputs': 1 , 'Description': 'alias a table value to a variable'},
 'talkbox': { 'Args': [ 'source', 'excitation', 'quality' ], 'Outputs': 1 , 'Description': 'high-resolution vocoder'},
 'tbldur': { 'Args': [ 'ftable' ], 'Outputs': 1 , 'Description': 'Get duration of table (in seconds)'},
-'tblrec': { 'Args': [ 'in', 'trig', 'tbl name' ], 'Outputs': 1 , 'Description': 'records values to table.'},
+'tblrec': { 'Args': [ 'in', 'tbl name' ], 'Outputs': 1 , 'Description': 'records values to table (value stays on the stack).'},
 'tblsize': { 'Args': [ 'ftable' ], 'Outputs': 1 , 'Description': 'Get size of table (in samples)'},
 'tdiv': { 'Args': [ 'trigger', 'num', 'offset' ], 'Outputs': 1 , 'Description': 'trigger divider'},
 'tenv': { 'Args': [ 'trig', 'attack', 'sustain', 'release' ], 'Outputs': 1 , 'Description': 'Triggerable linear envelope generator. Values in seconds.'},
