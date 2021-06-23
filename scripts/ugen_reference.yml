@@ -757,6 +757,7 @@ var:
   Args: [name]
   Description: creates variable
   Outputs: 1
+  Link: /variables
 varset:
   Args: [name, val]
   Description: creates and sets a variable

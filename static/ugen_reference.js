@@ -168,7 +168,7 @@ ugen_ref = {
 'tseg': { 'Args': [ 'trig', 'val', 'dur', 'curve', 'init' ], 'Outputs': 1 , 'Description': 'trigger segment'},
 'tseq': { 'Args': [ 'trig', 'mode', 'ft name' ], 'Outputs': 1 , 'Link': 'tseq' , 'Description': 'Triggered sequencer. modes: 0 = normal, 1 = shuffle.'},
 'tset': { 'Args': [ 'index', 'value', 'table' ], 'Outputs': 1 , 'Description': 'Set value of table'},
-'var': { 'Args': [ 'name' ], 'Outputs': 1 , 'Description': 'creates variable'},
+'var': { 'Args': [ 'name' ], 'Outputs': 1 , 'Link': '/variables' , 'Description': 'creates variable'},
 'varset': { 'Args': [ 'name', 'val' ], 'Outputs': 1 , 'Description': 'creates and sets a variable'},
 'vdelay': { 'Args': [ 'in', 'feedback', 'deltime', 'maxdelay' ], 'Outputs': 1 , 'Description': 'variable delay with feedback'},
 'voc': { 'Args': [ 'freq', 'pos', 'diameter', 'tenseness', 'velum' ], 'Outputs': 1 , 'Description': 'Vocal Tract Physical Model'},
