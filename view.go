@@ -17,6 +17,7 @@ type TemplateData struct {
 	CanUpdatePatch bool
 	UserName       string
 	StaticRoot     string
+	SoundpipeDocsRoot	string
 	Headline       string
 	HeadlinePrefix string
 	FinalJS        template.JS
@@ -56,7 +57,9 @@ func InitTemplates() {
 
 func BaseTemplateData(w http.ResponseWriter, r *http.Request) TemplateData {
 	ret := TemplateData{
-		StaticRoot: MasherConfig.StaticRoot}
+		StaticRoot: MasherConfig.StaticRoot,
+		SoundpipeDocsRoot: MasherConfig.SoundpipeDocsRoot,
+	}
 	session, err := SessionStore.Get(r, "sess")
 	if err != nil {
 		panic(err)

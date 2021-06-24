@@ -11,6 +11,7 @@ type ConfigData struct {
 	CookieSecret string `config:"MASHER_COOKIE_SECRET"`
 	DBPath       string `config:"MASHER_DB_PATH"`
 	StaticRoot   string `config:"MASHER_STATIC_ROOT"`
+	SoundpipeDocsRoot   string `config:"MASHER_SOUNDPIPE_DOCS_ROOT"`
 	Port         int    `config:"MASHER_PORT"`
 }
 

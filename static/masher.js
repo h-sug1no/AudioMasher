@@ -183,9 +183,7 @@ function updateTooltip() {
 	  ? `<a href="/learn${info.Link.startsWith('/') ? info.Link : `/ugens_${info.Link}`}" target="__tooltip_learn_${word}__"><b>${word}</b></a>`
 	  : `<b>${word}</b>`;
 	out += learnRef + "<br><i>" + info["Description"] + "</i>";
-	// const soundpipeDocs = 'https://paulbatchelor.github.io/res/soundpipe/';
-	const soundpipeDocs = 'http://localhost:8080/github/miscs/PaulBatchelor/Soundpipe/';
-	out += `<br><br><a class="soundpipe-doc" href="${soundpipeDocs}docs/${word}.html" target="__soundpipe_doc_${word}__">soundpipe/doc/${word}</a>`
+	out += `<br><br><a class="soundpipe-doc" href="${soundpipeDocsRoot}${word}.html" target="__soundpipe_doc_${word}__">soundpipe/doc/${word}</a>`
 	updateTooltipPos();
 	showTooltip(out);
 }
