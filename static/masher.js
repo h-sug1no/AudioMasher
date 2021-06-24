@@ -180,7 +180,7 @@ function updateTooltip() {
 		out += info["Args"].join(", ") + " ";
 	}
 	const learnRef = ("Link" in info)
-	  ? `<a href="/learn${info.Link.startsWith('/') ? info.Link : `/ugens_${info.Link}`}" target="__tooltip_learn_${word}__"><b>${word}</b></a>`
+	  ? `<a href="/learn${info.Link.startsWith('/') ? info.Link : `/ugens_${info.Link}`}" target="__tooltip_learn_${info.Link}__"><b>${word}</b></a>`
 	  : `<b>${word}</b>`;
 	out += learnRef + "<br><i>" + info["Description"] + "</i>";
 	out += `<br><br><a class="soundpipe-doc" href="${soundpipeDocsRoot}${word}.html" target="__soundpipe_doc_${word}__">soundpipe/doc/${word}</a>`
