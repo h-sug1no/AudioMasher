@@ -165,6 +165,13 @@ var editorArea, editor;
 var lastWord = "";
 var tipDiv = document.getElementById("tooltip");
 let ugen_ref_keys;
+function onCandidateItemClick(ugen_ref_key) {
+	console.log(ugen_ref_key);
+	var cmWord = editor.findWordAt(editor.getCursor());
+	editor.replaceRange(ugen_ref_key, cmWord.anchor, cmWord.head);
+	editor.focus();
+}
+
 function upcateCandidateList(word='') {
 	if (word.length <= 0) {
 		return false;
@@ -174,7 +181,8 @@ function upcateCandidateList(word='') {
 	ugen_ref_keys.forEach((key) => {
 		const items = key.split(word);
 		if (items && items.length > 1) {
-			out += `<div>${items.join(`<span class="candidate-item">${word}</span>`)}</div>`;
+			out += `<div onclick="onCandidateItemClick('${key}')" class="candidate-item">
+			${items.join(`<span class="candidate-item-str">${word}</span>`)}</div>`;
 		}
 	});
 	if (out.length) {

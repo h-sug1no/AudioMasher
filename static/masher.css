@@ -218,8 +218,13 @@ a.tab_thumb {
 	text-decoration: underline;
 }
 
-#tooltip .candidate-item {
+#tooltip .candidate-item-str {
 	font-weight: bold;
+}
+
+#tooltip .candidate-item:hover {
+	background-color: lightgray;
+	cursor: pointer;
 }
 
 .learn #tooltip, .learn #errors {
