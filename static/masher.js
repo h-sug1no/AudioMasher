@@ -164,6 +164,25 @@ CodeMirror.defineSimpleMode("sporth", {
 var editorArea, editor;
 var lastWord = "";
 var tipDiv = document.getElementById("tooltip");
+let ugen_ref_keys;
+function upcateCandidateList(word='') {
+	if (word.length <= 0) {
+		return false;
+	}
+	ugen_ref_keys = ugen_ref_keys || Object.keys(ugen_ref);
+	let out = '';
+	ugen_ref_keys.forEach((key) => {
+		const items = key.split(word);
+		if (items && items.length > 1) {
+			out += `<div>${items.join(`<span class="candidate-item">${word}</span>`)}</div>`;
+		}
+	});
+	if (out.length) {
+		updateTooltipPos();
+		showTooltip(out);
+	}
+	return !!out.length;
+}
 function updateTooltip() {
 	var cmWord = editor.findWordAt(editor.getCursor());
 	var word = editor.getRange(cmWord.anchor, cmWord.head);
@@ -171,7 +190,9 @@ function updateTooltip() {
 		return;
 	lastWord = word;
 	if (!(word in ugen_ref)) {
-		tipDiv.classList.remove("on");
+		if (!upcateCandidateList(word)) {
+			tipDiv.classList.remove("on");
+		}
 		return;
 	}
 	var info = ugen_ref[word];

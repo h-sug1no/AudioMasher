@@ -218,6 +218,10 @@ a.tab_thumb {
 	text-decoration: underline;
 }
 
+#tooltip .candidate-item {
+	font-weight: bold;
+}
+
 .learn #tooltip, .learn #errors {
 	bottom: 81px;
 }
