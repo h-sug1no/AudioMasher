@@ -105,7 +105,7 @@ blsaw:
   Outputs: 1
 blsquare:
   Link: blsquare
-  Args: [freq, width (0.5), amp]
+  Args: [freq, amp, width (0.5)]
   Description: Band-limited square oscillator with pulse-width
   Outputs: 1
 bltriangle:
