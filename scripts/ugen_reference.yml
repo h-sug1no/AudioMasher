@@ -337,6 +337,7 @@ gen_vals:
   Args: [name, args]
   Description: Generates an ftable from a space delimited set of values.
   Outputs: 1
+  Link: /prop
 get:
   Args: [name]
   Description: gets variable
@@ -522,6 +523,7 @@ prop:
   Args: [bpm, prop string]
   Description: Parses prop code to produce a set of triggers
   Outputs: 1
+  Link: /prop
 pset:
   Args: [val, num]
   Description: p register set
