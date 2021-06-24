@@ -166,7 +166,6 @@ var lastWord = "";
 var tipDiv = document.getElementById("tooltip");
 let ugen_ref_keys;
 function onCandidateItemClick(ugen_ref_key) {
-	console.log(ugen_ref_key);
 	var cmWord = editor.findWordAt(editor.getCursor());
 	editor.replaceRange(ugen_ref_key, cmWord.anchor, cmWord.head);
 	editor.focus();
