@@ -480,6 +480,10 @@ pan:
   Args: [in, pan]
   Description: Equal power panning. -1 = hardL 1 = hardR
   Outputs: 1
+panst:
+  Args: [left signal (f), right signal (f), pan (f)]
+  Description: Stereo panning.
+  Outputs: 1
 pareq:
   Args: [in, freq, boost, Q, 'mode(0=peak, 1=low shelf, 2= high shelf)']
   Description: parametric equalizer

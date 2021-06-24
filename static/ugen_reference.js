@@ -100,6 +100,7 @@ ugen_ref = {
 'p': { 'Args': [ 'num' ], 'Outputs': 1 , 'Link': '/pregisters' , 'Description': 'p register get'},
 'palias': { 'Args': [ 'name', 'index' ], 'Outputs': 1 , 'Description': 'create a variable alias for p-value'},
 'pan': { 'Args': [ 'in', 'pan' ], 'Outputs': 1 , 'Description': 'Equal power panning. -1 = hardL 1 = hardR'},
+'panst': { 'Args': [ 'left signal (f)', 'right signal (f)', 'pan (f)' ], 'Outputs': 1 , 'Description': 'Stereo panning.'},
 'pareq': { 'Args': [ 'in', 'freq', 'boost', 'Q', 'mode(0=peak, 1=low shelf, 2= high shelf)' ], 'Outputs': 1 , 'Description': 'parametric equalizer'},
 'pdhalf': { 'Args': [ 'amount -1 to 1' ], 'Outputs': 1 , 'Description': 'casio phasor distortion'},
 'peaklim': { 'Args': [ 'input', 'atk', 'rel', 'thresh db' ], 'Outputs': 1 , 'Description': 'peak limiter'},
