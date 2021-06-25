@@ -184,7 +184,7 @@ function upcateCandidateList(word='', cmWord) {
 		const vkeys = {};
 		editor.doc.eachLine((l) => {
 			l.text.split(/\s/).forEach((str) => {
-				if (str.match(/^_.+/)) {
+				if (str.match(/^_.+/) && word !== str) {
 					vkeys[str] = true;
 				}
 			});
