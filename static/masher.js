@@ -156,6 +156,7 @@ CodeMirror.defineSimpleMode("sporth", {
 	{regex: /0x[a-f\d]+|[-+]?(?:\.\d+|\d+\.?\d*)(?:e[-+]?\d+)?/i, token: "number"},
 	{regex: /#.*/, token: "comment"},
 	{regex: /[-+\/*=<>!]+/, token: "operator"},
+	{regex: /_[\w]+/, token: "variable-2"},
 	// Sporth: treat strings as "variables"
 	{regex: /[a-z$][\w$]*/, token: "variable"},
 	{regex: /"(?:[^\\]|\\.)*?(?:"|$)/, token: "variable"},
