@@ -270,8 +270,10 @@ if (editorArea != null) {
 		lineNumbers: true,
 		theme: "masher-light",
 		extraKeys: {
-			'Ctrl-Enter': tglPlay,
-			'Ctrl-Space': updateCandidateList,
+			'Ctrl-Enter': play,
+			'Ctrl-Space': stop,
+			'Ctrl-.': tglPlay,
+			'Ctrl-/': updateCandidateList,
 		}
 	});
 	editor.on("keyHandled", updateTooltip);
