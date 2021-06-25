@@ -171,33 +171,46 @@ function onCandidateItemClick(ugen_ref_key) {
 	editor.focus();
 }
 
-function upcateCandidateList(word='') {
+function upcateCandidateList(word='', cmWord) {
 	if (word.length <= 0) {
 		return false;
 	}
 	ugen_ref_keys = ugen_ref_keys || Object.keys(ugen_ref);
-	let out = '';
+	const list = [];
 	ugen_ref_keys.forEach((key) => {
 		const items = key.split(word);
 		if (items && items.length > 1) {
-			out += `<div onclick="onCandidateItemClick('${key}')" class="candidate-item">
-			${items.join(`<span class="candidate-item-str">${word}</span>`)}</div>`;
+			list.push({
+				render: (elt, data, cur) => {
+					const elm = document.createElement('div');
+					elm.classList.add('candidate-item');
+					elm.innerHTML = `${items.join(`<span class="candidate-item-str">${word}</span>`)}`;
+					elt.appendChild(elm);
+				},
+				text: key,
+			})
 		}
 	});
-	if (out.length) {
-		updateTooltipPos();
-		showTooltip(out);
+	if (list.length) {
+		CodeMirror.showHint(editor, () => ({
+			list: list,
+			from: cmWord.anchor,
+			to: cmWord.head,
+		}), { completeSingle: false });
 	}
-	return !!out.length;
+	return !!list.length;
 }
+
 function updateTooltip() {
 	var cmWord = editor.findWordAt(editor.getCursor());
 	var word = editor.getRange(cmWord.anchor, cmWord.head);
+
 	if (word == lastWord)
 		return;
 	lastWord = word;
+
 	if (!(word in ugen_ref)) {
-		if (!upcateCandidateList(word)) {
+		if (!upcateCandidateList(word, cmWord)) {
 			tipDiv.classList.remove("on");
 		}
 		return;

@@ -6,6 +6,7 @@
 	<meta http-equiv="Content-Language" content="en">
 	<link rel="stylesheet" href="{{.StaticRoot}}masher.css">
 	<link rel="stylesheet" href="{{.StaticRoot}}codemirror/codemirror.css">
+	<link rel="stylesheet" href="{{.StaticRoot}}codemirror/addon/hint/show-hint.css">
 	<style>
 		#controls>a::after {background-image: url("{{.StaticRoot}}controls.svg");}
 		#play_loading {background-image: url("{{.StaticRoot}}loading.gif");}
@@ -53,6 +54,7 @@
 	<div id=modal_front></div>
 	<script src="{{.StaticRoot}}codemirror/codemirror.js"></script>
 	<script src="{{.StaticRoot}}codemirror/addon/mode/simple.js"></script>
+	<script src="{{.StaticRoot}}codemirror/addon/hint/show-hint.js"></script>
 	<script src="{{.StaticRoot}}ugen_reference.js"></script>
 	<script src="{{.StaticRoot}}sporthparams.js"></script>
 	<script src="{{.StaticRoot}}masher.js"></script>
