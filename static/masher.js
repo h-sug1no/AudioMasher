@@ -220,6 +220,8 @@ function updateCandidateList() {
 			from: cmWord.anchor,
 			to: cmWord.head,
 		}), { completeSingle: false });
+	} else {
+		if (editor.state.completionActive) editor.state.completionActive.close();
 	}
 	return !!list.length;
 }
@@ -276,6 +278,7 @@ if (editorArea != null) {
 	editor.on("cursorActivity", updateTooltip);
 	editor.on("scroll", updateTooltipPos);
 	editor.on("changes", function(cm) {
+		window.setTimeout(updateCandidateList);
 		changed = true;
 	});
 	editor.setSize("100%", "100%");
