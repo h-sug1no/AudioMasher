@@ -176,8 +176,23 @@ function upcateCandidateList(word='', cmWord) {
 		return false;
 	}
 	ugen_ref_keys = ugen_ref_keys || Object.keys(ugen_ref);
+	let keys = ugen_ref_keys;
+
 	const list = [];
-	ugen_ref_keys.forEach((key) => {
+
+	if (word.startsWith('_')) {
+		const vkeys = {};
+		editor.doc.eachLine((l) => {
+			l.text.split(/\s/).forEach((str) => {
+				if (str.match(/^_.+/)) {
+					vkeys[str] = true;
+				}
+			});
+		});
+		keys = Object.keys(vkeys);
+	}
+
+	keys.forEach((key) => {
 		const items = key.split(word);
 		if (items && items.length > 1) {
 			list.push({
