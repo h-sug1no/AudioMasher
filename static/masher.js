@@ -177,12 +177,18 @@ var tipDiv = document.getElementById("tooltip");
 let ugen_ref_keys;
 
 function updateCandidateList() {
-	var cmWord = editor.findWordAt(editor.getCursor());
-	var word = editor.getRange(cmWord.anchor, cmWord.head);
-
+	var cur = editor.getCursor(), curLine = editor.getLine(cur.line);
+	var end = cur.ch, start = end;
+	while (start && /\w/.test(curLine.charAt(start - 1))) --start;
+	var word = start != end && curLine.slice(start);
+	word = word || '';
+	const m = word.match(/^[\w]+/) || [];
+	word = m[0] || '';
+	end = start + word.length;
 	if (word.length <= 0) {
 		return false;
 	}
+
 	ugen_ref_keys = ugen_ref_keys || Object.keys(ugen_ref);
 	let keys = ugen_ref_keys;
 
@@ -217,8 +223,8 @@ function updateCandidateList() {
 	if (list.length) {
 		CodeMirror.showHint(editor, () => ({
 			list: list,
-			from: cmWord.anchor,
-			to: cmWord.head,
+			from: CodeMirror.Pos(cur.line, start),
+			to: CodeMirror.Pos(cur.line, end),
 		}), { completeSingle: false });
 	} else {
 		if (editor.state.completionActive) editor.state.completionActive.close();
