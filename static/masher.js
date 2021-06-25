@@ -172,7 +172,10 @@ function onCandidateItemClick(ugen_ref_key) {
 	editor.focus();
 }
 
-function upcateCandidateList(word='', cmWord) {
+function upcateCandidateList() {
+	var cmWord = editor.findWordAt(editor.getCursor());
+	var word = editor.getRange(cmWord.anchor, cmWord.head);
+
 	if (word.length <= 0) {
 		return false;
 	}
@@ -226,9 +229,7 @@ function updateTooltip() {
 	lastWord = word;
 
 	if (!(word in ugen_ref)) {
-		if (!upcateCandidateList(word, cmWord)) {
-			tipDiv.classList.remove("on");
-		}
+		tipDiv.classList.remove("on");
 		return;
 	}
 	var info = ugen_ref[word];
@@ -265,6 +266,8 @@ if (editorArea != null) {
 		extraKeys: {
 			'Ctrl-Enter': play,
 			'Ctrl-Space': stop,
+			'Ctrl-/': upcateCandidateList,
+			'Tab': upcateCandidateList,
 		}
 	});
 	editor.on("keyHandled", updateTooltip);
