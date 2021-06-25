@@ -280,8 +280,12 @@ if (editorArea != null) {
 	editor.on("cursorActivity", updateTooltip);
 	editor.on("scroll", updateTooltipPos);
 	editor.on("changes", function(cm) {
-		window.setTimeout(updateCandidateList);
 		changed = true;
+	});
+	editor.on("change", function(cm, arg) {
+		if (arg.origin !== "complete") {
+			window.setTimeout(updateCandidateList);
+		}
 	});
 	editor.setSize("100%", "100%");
 	window.onresize = function() {editor.refresh();};
