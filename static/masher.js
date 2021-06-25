@@ -112,6 +112,15 @@ var stop = function() {
 		playButton.classList.remove("playing");
 	}
 };
+
+var tglPlay = () => {
+	if (playing) {
+		stop();
+	 } else {
+		play();
+	 }
+}
+
 var Module = {
 	print: function(text) {
 	},
@@ -166,13 +175,8 @@ var editorArea, editor;
 var lastWord = "";
 var tipDiv = document.getElementById("tooltip");
 let ugen_ref_keys;
-function onCandidateItemClick(ugen_ref_key) {
-	var cmWord = editor.findWordAt(editor.getCursor());
-	editor.replaceRange(ugen_ref_key, cmWord.anchor, cmWord.head);
-	editor.focus();
-}
 
-function upcateCandidateList() {
+function updateCandidateList() {
 	var cmWord = editor.findWordAt(editor.getCursor());
 	var word = editor.getRange(cmWord.anchor, cmWord.head);
 
@@ -264,10 +268,8 @@ if (editorArea != null) {
 		lineNumbers: true,
 		theme: "masher-light",
 		extraKeys: {
-			'Ctrl-Enter': play,
-			'Ctrl-Space': stop,
-			'Ctrl-/': upcateCandidateList,
-			'Tab': upcateCandidateList,
+			'Ctrl-Enter': tglPlay,
+			'Ctrl-Space': updateCandidateList,
 		}
 	});
 	editor.on("keyHandled", updateTooltip);
