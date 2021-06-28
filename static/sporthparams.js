@@ -6,13 +6,19 @@ var setP = function(i, p)
 	if (typeof sporthem_setp !== 'undefined') sporthem_setp(i, p);
 }
 
+var checkPIdx = function(pidx = '')
+{
+	var nPIdx = Number(pidx);
+	return (nPIdx >= 0 && nPIdx <= 15)
+}
+
 var createSlider = function(container, param, values)
 {
 	var paramDiv = document.createElement("div");
 	paramDiv.className = "sliderOut";
 	
 	var label = document.createElement("div");
-	label.innerHTML = param.name + ":";
+	label.innerHTML = param.name + ":" + param.index + ":";
 	label.className = "sliderLabel";
 	paramDiv.appendChild(label);
 	
@@ -22,7 +28,12 @@ var createSlider = function(container, param, values)
 	slider.max = param.max;
 	slider.step = (param.max - param.min) / 1000;
 	slider.className = "sliderRange";
+
 	paramDiv.appendChild(slider);
+	if (!checkPIdx(param.index)) {
+		slider.setAttribute('disabled', true);
+		slider.setAttribute('title', `index(0..15) out of range: ${param.index}`);
+	}
 	
 	var displ = document.createElement("div");
 	displ.innerHTML = param.value + ' ' + param.units;
@@ -82,6 +93,10 @@ function sporthParam_setPvalues(script, values)
 			param.value = match[5];
 		else
 			param.value = param.min;
-		setP(param.index, param.value);
+		if (checkPIdx(param.index)) {
+			setP(param.index, param.value);
+		} else {
+			console.error(`palias: index(0..15): out of range: ${param.index}`);
+		}
 	}
 }
