@@ -97,6 +97,9 @@ a.tab_thumb {
 #no_params.nodisplay {
 	display: none;
 }
+#no_params {
+	white-space: pre;
+}
 
 #sliders {
 	position: relative;
