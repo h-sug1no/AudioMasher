@@ -277,9 +277,9 @@ if (editorArea != null) {
 		theme: "masher-light",
 		extraKeys: {
 			'Ctrl-Enter': play,
-			'Ctrl-Space': stop,
-			'Ctrl-.': tglPlay,
-			'Ctrl-/': updateCandidateList,
+			'Ctrl-.': stop,
+			// 'Ctrl-.': tglPlay,
+			'Ctrl-Space': updateCandidateList,
 		}
 	});
 	editor.on("keyHandled", updateTooltip);
