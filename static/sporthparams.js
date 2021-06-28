@@ -96,7 +96,7 @@ function sporthParam_setPvalues(script, values)
 		if (checkPIdx(param.index)) {
 			setP(param.index, param.value);
 		} else {
-			console.error(`palias: index(0..15): out of range: ${param.index}`);
+			console.error(`palias: index(0..15): out of range: ${param.name}, ${param.index}`);
 		}
 	}
 }
