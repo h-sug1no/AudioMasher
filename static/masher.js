@@ -165,7 +165,7 @@ CodeMirror.defineSimpleMode("sporth", {
 	{regex: /0x[a-f\d]+|[-+]?(?:\.\d+|\d+\.?\d*)(?:e[-+]?\d+)?/i, token: "number"},
 	{regex: /#.*/, token: "comment"},
 	{regex: /[-+\/*=<>!]+/, token: "operator"},
-	{regex: /_[\w]+/, token: "variable-2"},
+	{regex: /_[\S]+/, token: "variable-2"},
 	// Sporth: treat strings as "variables"
 	{regex: /[a-z$][\w$]*/, token: "variable"},
 	{regex: /"(?:[^\\]|\\.)*?(?:"|$)/, token: "variable"},
@@ -182,7 +182,7 @@ function updateCandidateList() {
 	while (start && /\w/.test(curLine.charAt(start - 1))) --start;
 	var word = start != end && curLine.slice(start);
 	word = word || '';
-	const m = word.match(/^[\w]+/) || [];
+	const m = word.match(/^[\S]+/) || [];
 	word = m[0] || '';
 	end = start + word.length;
 	if (word.length <= 0) {
