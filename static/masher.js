@@ -91,13 +91,12 @@ var initStartAudioStereo = function () {
 	scriptNode.connect(audioCtx.destination);
 }
 
-
 window.masher_stereo = false;
 var play = function () {
 	cleanupStopAudio();
 	gotError = false;
 	playButton.classList.add("playing");
-	sporthem_compile(editor.getValue().replace(/\t/g , " "));
+	sporthem_compile(editor.getValue().replace(/\t/g , " ").replace(/\\\\/g, '\\').replace(/\\\n/g, ' '));
 	parseParams();
 	if (editor.getValue().startsWith('# stereo'))
 		initStartAudioStereo();
