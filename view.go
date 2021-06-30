@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"html/template"
+	"io"
 	"net/http"
 	"sort"
 	"strings"
@@ -84,6 +85,32 @@ func ViewPatch(w http.ResponseWriter, r *http.Request) {
 	}
 	data.CurrentView = "Patch"
 	data.Headline = data.Patch.Title + " by " + data.Patch.Author
+	err = masherTemplates.ExecuteTemplate(w, "layout.html", data)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func ViewSporthEx(w http.ResponseWriter, r *http.Request) {
+	var err error
+	params := mux.Vars(r)
+	url := "https://raw.githubusercontent.com/PaulBatchelor/Sporth/master/examples/" + params["id"]
+
+	resp, err := http.Get(url)
+	if err != nil {
+		// handle error
+		ViewNotFound(w, r)
+		return
+	}
+	defer resp.Body.Close()
+	patch, err := io.ReadAll(resp.Body)
+
+	data := BaseTemplateData(w, r)
+	p := MasherPatch{Files: map[string]string{"main.sp": string(patch)}}
+	data.Patch = p
+	data.CanUpdatePatch = true
+	data.CurrentView = "Patch"
+	data.Headline = url
 	err = masherTemplates.ExecuteTemplate(w, "layout.html", data)
 	if err != nil {
 		panic(err)
