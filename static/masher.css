@@ -120,6 +120,10 @@ a.tab_thumb {
 .sliderRange { width: 53.2%; }
 .sliderDispl { width: 23.2%; text-align: left; }
 
+.sporthex_container {
+	margin: 1rem;
+}
+
 #controls {
 	position: absolute;
 	top: 16px;
