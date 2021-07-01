@@ -803,3 +803,79 @@ zrev:
   Args: [in2, in1, rtlo, rthi, hfdmp]
   Description: zitareverb module (simplified)
   Outputs: 1
+durs:
+  Args: [(none)]
+  Outputs: 1
+  Description: returns duration of sporth patch (in samples)
+edo:
+  Args: [pitch_num (f), edo (f)]
+  Outputs: 1
+  Description: Return a pitch that divides an octave into `edo` steps. `pitch_num` set to 0 always equals Middle-C, ~261.6255 HZ. Negative `pitch_num` will go below middle-C.
+eval:
+  Args: [sporth instructions (s)]
+  Outputs: 1
+  Description: Evaluates sporth string to stack
+fc:
+  Args: [tbl (s)]
+  Outputs: 1
+  Description: close a dynamically loaded ugen (call this once at the end)
+fe:
+  Args: [tbl (s)]
+  Outputs: 1
+  Description: execute a dynamically loaded ugen
+ftsum:
+  Args: [start (f), end (f), tbl (s)]
+  Outputs: 1
+  Description: sum a range of ftable values (inclusive). built for polysporth.
+limit:
+  Args: [in (f), min (f), max (f)]
+  Outputs: 1
+  Description: limit signal within range given
+nsmp:
+  Args: [trig (f), index (f), sr (f), ini (s), wav (s)]
+  Outputs: 1
+  Description: Nanosamp sampler. See soundpipe docs.
+paulstretch:
+  Args: [stretch (F), window size (F), tbl (s)]
+  Outputs: 1
+  Description: Paulstretch algorithm
+print:
+  Args: [val (f/s) label (s)]
+  Outputs: 1
+  Description: prints values to terminal
+pst:
+  Args: [tog, id, ftname]
+  Outputs: 1
+  Description: toggle a polysporth sporthlet
+rms:
+  Args: [signal (f)]
+  Outputs: 1
+  Description: Determines the root-mean-square amplitude of an audio signal
+saw:
+  Args: [freq (f), amp (f)]
+  Outputs: 1
+  Description: Band-limited sawtooth oscillator. (alias of blsaw)
+say:
+  Args: [val (f/s)]
+  Outputs: 1
+  Description: prints string value to terminal
+scrambler:
+  Args: [name (s), name (s)]
+  Outputs: 1
+  Description: Scramble signals between two ftables
+square:
+  Args: [freq (f) width (f) amp (f)]
+  Outputs: 1
+  Description: Band-limited square oscillator with pulse-width (alias of blsquare)
+tin:
+  Args: [(none)]
+  Outputs: 1
+  Description: Read trigger from STDIN.
+tri:
+  Args: [freq (f) amp (f)]
+  Outputs: 1
+  Description: Band-limited triangle oscillator (alias of bltriangle)
+triangle:
+  Args: [freq (f) amp (f)]
+  Outputs: 1
+  Description: Band-limited triangle oscillator (alias of bltriangle)

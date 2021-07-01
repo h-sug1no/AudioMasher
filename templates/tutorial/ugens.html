@@ -54,11 +54,16 @@ Some of these ugens have links with short simple examples. </p>
 <b><a href="/learn/ugens_/operations">dup</a></b><div><i>Duplicates last item on the stack.</i></div><br>
 <b><a href="/learn/ugens_dup2">dup2</a></b><div><i>Duplicates the two last item on the stack.</i></div><br>
 <b>dur</b><div><i>returns duration of sporth patch (in seconds)</i></div><br>
+<b>durs</b><div><i>returns duration of sporth patch (in samples)</i></div><br>
 <b>dust</b><div><i>dust. bipolar = 1 unipolar = 0</i></div><br>
+<b>edo</b><div><i>Return a pitch that divides an octave into `edo` steps. `pitch_num` set to 0 always equals Middle-C, ~261.6255 HZ. Negative `pitch_num` will go below middle-C.</i></div><br>
 <b>eq</b><div><i>conditional equals</i></div><br>
 <b>eqfil</b><div><i>eq filter</i></div><br>
+<b>eval</b><div><i>Evaluates sporth string to stack</i></div><br>
 <b>expon</b><div><i>exponential line segment</i></div><br>
 <b>f</b><div><i>Call a user defined function</i></div><br>
+<b>fc</b><div><i>close a dynamically loaded ugen (call this once at the end)</i></div><br>
+<b>fe</b><div><i>execute a dynamically loaded ugen</i></div><br>
 <b>floor</b><div><i>Performs flooring, returning the integer part.</i></div><br>
 <b>fm</b><div><i>A simple FM oscillator.</i></div><br>
 <b>fof</b><div><i>fof</i></div><br>
@@ -66,6 +71,7 @@ Some of these ugens have links with short simple examples. </p>
 <b>fog</b><div><i>fog</i></div><br>
 <b>fosc</b><div><i>FM oscillator</i></div><br>
 <b>frac</b><div><i>Returns the fractional part of item on the stack.</i></div><br>
+<b>ftsum</b><div><i>sum a range of ftable values (inclusive). built for polysporth.</i></div><br>
 <b>gbuzz</b><div><i>Series of partials from the harmonic series</i></div><br>
 <b>gen_composite</b><div><i>Generate a composite waveform of sinusoids.</i></div><br>
 <b>gen_eval</b><div><i>Evaluates sporth string to table</i></div><br>
@@ -83,6 +89,7 @@ Some of these ugens have links with short simple examples. </p>
 <b>inv</b><div><i>inverse a signal 1/x</i></div><br>
 <b>jcrev</b><div><i>Chowning reverb</i></div><br>
 <b>jitter</b><div><i>Jitter control signal</i></div><br>
+<b>limit</b><div><i>limit signal within range given</i></div><br>
 <b>line</b><div><i>line segment</i></div><br>
 <b>log</b><div><i>Performs natural logarithm.</i></div><br>
 <b>log10</b><div><i>Performs base 10 logarithm.</i></div><br>
@@ -104,6 +111,7 @@ Some of these ugens have links with short simple examples. </p>
 <b><a href="/learn/ugens_mul">mul</a></b><div><i>Performs multiplication.</i></div><br>
 <b>ne</b><div><i>conditional not-equal to</i></div><br>
 <b>noise</b><div><i>White noise generator.</i></div><br>
+<b>nsmp</b><div><i>Nanosamp sampler. See soundpipe docs.</i></div><br>
 <b><a href="/learn/ugens_osc">osc</a></b><div><i>Wavetable lookup oscillator</i></div><br>
 <b><a href="/learn/ugens_oscmorph2">oscmorph2</a></b><div><i>2-table morphing oscillator</i></div><br>
 <b><a href="/learn/ugens_oscmorph4">oscmorph4</a></b><div><i>4-table morphing oscillator</i></div><br>
@@ -112,6 +120,7 @@ Some of these ugens have links with short simple examples. </p>
 <b>pan</b><div><i>Equal power panning. -1 = hardL 1 = hardR</i></div><br>
 <b>panst</b><div><i>Stereo panning.</i></div><br>
 <b>pareq</b><div><i>parametric equalizer</i></div><br>
+<b>paulstretch</b><div><i>Paulstretch algorithm</i></div><br>
 <b>pdhalf</b><div><i>casio phasor distortion</i></div><br>
 <b>peaklim</b><div><i>peak limiter</i></div><br>
 <b>phaser</b><div><i>stereo phaser</i></div><br>
@@ -121,9 +130,11 @@ Some of these ugens have links with short simple examples. </p>
 <b>port</b><div><i>Applies portamento to a signal.</i></div><br>
 <b>pos</b><div><i>returns playing time, in seconds</i></div><br>
 <b><a href="/learn/ugens_posc3">posc3</a></b><div><i>high-precision oscillator with cubic interpolation</i></div><br>
+<b>print</b><div><i>prints values to terminal</i></div><br>
 <b><a href="/learn/ugens_/prop">prop</a></b><div><i>Parses prop code to produce a set of triggers</i></div><br>
 <b><a href="/learn/ugens_/pregisters">pset</a></b><div><i>p register set</i></div><br>
 <b>pshift</b><div><i>pitch shifter</i></div><br>
+<b>pst</b><div><i>toggle a polysporth sporthlet</i></div><br>
 <b>ptrack</b><div><i>pitch tracking (outputs: amp, pitch)</i></div><br>
 <b>rand</b><div><i>picks random number at start time</i></div><br>
 <b>randh</b><div><i>Random hold</i></div><br>
@@ -132,13 +143,17 @@ Some of these ugens have links with short simple examples. </p>
 <b>reson</b><div><i>resonator filter</i></div><br>
 <b>reverse</b><div><i>reverse delay</i></div><br>
 <b>revsc</b><div><i>Stereo reverb module from reverbsc Csound opcode.</i></div><br>
+<b>rms</b><div><i>Determines the root-mean-square amplitude of an audio signal</i></div><br>
 <b><a href="/learn/ugens_/operations">rot</a></b><div><i>Stack rotate. s: 1 2 3 -> 2 3 1</i></div><br>
 <b>round</b><div><i>Performs rounding to nearest integer.</i></div><br>
 <b>rpt</b><div><i>Stutterer / repeater (bufsize in seconds)</i></div><br>
 <b>rspline</b><div><i>random spline generator</i></div><br>
 <b>samphold</b><div><i>sample and hold</i></div><br>
 <b>saturator</b><div><i>saturator distortion unit</i></div><br>
+<b>saw</b><div><i>Band-limited sawtooth oscillator. (alias of blsaw)</i></div><br>
+<b>say</b><div><i>prints string value to terminal</i></div><br>
 <b>scale</b><div><i>Scales from unipolar [0, 1] to [min, max].</i></div><br>
+<b>scrambler</b><div><i>Scramble signals between two ftables</i></div><br>
 <b>sdelay</b><div><i>delay (in samples)</i></div><br>
 <b><a href="/learn/ugens_/variables">set</a></b><div><i>sets variable</i></div><br>
 <b>setdurs</b><div><i>set total duration (in samples)</i></div><br>
@@ -148,6 +163,7 @@ Some of these ugens have links with short simple examples. </p>
 <b>slick</b><div><i>picks a string randomly from string list</i></div><br>
 <b>smoothdelay</b><div><i>smooth delay line</i></div><br>
 <b>sqrt</b><div><i>square root</i></div><br>
+<b>square</b><div><i>Band-limited square oscillator with pulse-width (alias of blsquare)</i></div><br>
 <b>sr</b><div><i>Returns the sample rate</i></div><br>
 <b>srand</b><div><i>seed internal RNG</i></div><br>
 <b>streson</b><div><i>String resonator filter</i></div><br>
@@ -170,12 +186,15 @@ Some of these ugens have links with short simple examples. </p>
 <b>thresh</b><div><i>detect threshold crossings. mode: 0=from below, 1=above, 2=both</i></div><br>
 <b>tick</b><div><i>trigger at start of file. only use once</i></div><br>
 <b>timer</b><div><i>timer</i></div><br>
+<b>tin</b><div><i>Read trigger from STDIN.</i></div><br>
 <b>tog</b><div><i>toggle switch that can be triggered on/off</i></div><br>
 <b>tone</b><div><i>simple one-pole low pass filter</i></div><br>
 <b>tphasor</b><div><i>Triggerable normalized sawtooth wave.</i></div><br>
 <b>tport</b><div><i>Applies portamento to a signal with triggerable reset.</i></div><br>
 <b>tprop</b><div><i>prop with a triggerable reset</i></div><br>
 <b>trand</b><div><i>triggerable RNG</i></div><br>
+<b>tri</b><div><i>Band-limited triangle oscillator (alias of bltriangle)</i></div><br>
+<b>triangle</b><div><i>Band-limited triangle oscillator (alias of bltriangle)</i></div><br>
 <b>tseg</b><div><i>trigger segment</i></div><br>
 <b><a href="/learn/ugens_tseq">tseq</a></b><div><i>Triggered sequencer. modes: 0 = normal, 1 = shuffle.</i></div><br>
 <b>tset</b><div><i>Set value of table</i></div><br>

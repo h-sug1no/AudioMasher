@@ -50,11 +50,16 @@
 <b><a href="/learn/ugens_/operations">dup</a></b><div>f<br><i>Duplicates last item on the stack.</i></div>
 <b><a href="/learn/ugens_dup2">dup2</a></b><div>f, f<br><i>Duplicates the two last item on the stack.</i></div>
 <b>dur</b><div><i>returns duration of sporth patch (in seconds)</i></div>
+<b>durs</b><div>(none)<br><i>returns duration of sporth patch (in samples)</i></div>
 <b>dust</b><div>amp, density, bipolar<br><i>dust. bipolar = 1 unipolar = 0</i></div>
+<b>edo</b><div>pitch_num (f), edo (f)<br><i>Return a pitch that divides an octave into `edo` steps. `pitch_num` set to 0 always equals Middle-C, ~261.6255 HZ. Negative `pitch_num` will go below middle-C.</i></div>
 <b>eq</b><div>v1, v2<br><i>conditional equals</i></div>
 <b>eqfil</b><div>in(f) freq, bw, gain<br><i>eq filter</i></div>
+<b>eval</b><div>sporth instructions (s)<br><i>Evaluates sporth string to stack</i></div>
 <b>expon</b><div>trig, ia, idur, ib<br><i>exponential line segment</i></div>
 <b>f</b><div>num<br><i>Call a user defined function</i></div>
+<b>fc</b><div>tbl (s)<br><i>close a dynamically loaded ugen (call this once at the end)</i></div>
+<b>fe</b><div>tbl (s)<br><i>execute a dynamically loaded ugen</i></div>
 <b>floor</b><div>v1<br><i>Performs flooring, returning the integer part.</i></div>
 <b>fm</b><div>frequency, amplitude, carrier (1), modulator (1), index (8)<br><i>A simple FM oscillator.</i></div>
 <b>fof</b><div>amp, fund, form, oct, band, ris, dec, dur, iphs, iolaps, window table, sine table<br><i>fof</i></div>
@@ -62,6 +67,7 @@
 <b>fog</b><div>amp, dense, trans, spd, oct, band, ris, dec, dur, iphs, iolaps, window table, wav table<br><i>fog</i></div>
 <b>fosc</b><div>freq, amp, carrier, modulator, index, table<br><i>FM oscillator</i></div>
 <b>frac</b><div>v1<br><i>Returns the fractional part of item on the stack.</i></div>
+<b>ftsum</b><div>start (f), end (f), tbl (s)<br><i>sum a range of ftable values (inclusive). built for polysporth.</i></div>
 <b>gbuzz</b><div>freq, amp, nharm, lharm, mul<br><i>Series of partials from the harmonic series</i></div>
 <b>gen_composite</b><div>name, size, args<br><i>Generate a composite waveform of sinusoids.</i></div>
 <b>gen_eval</b><div>name, size, string<br><i>Evaluates sporth string to table</i></div>
@@ -79,6 +85,7 @@
 <b>inv</b><div>inv<br><i>inverse a signal 1/x</i></div>
 <b>jcrev</b><div>input<br><i>Chowning reverb</i></div>
 <b>jitter</b><div>amp, cpsMin, cpsMax<br><i>Jitter control signal</i></div>
+<b>limit</b><div>in (f), min (f), max (f)<br><i>limit signal within range given</i></div>
 <b>line</b><div>trig, ia, idur, ib<br><i>line segment</i></div>
 <b>log</b><div>v1<br><i>Performs natural logarithm.</i></div>
 <b>log10</b><div>v1<br><i>Performs base 10 logarithm.</i></div>
@@ -100,6 +107,7 @@
 <b><a href="/learn/ugens_mul">mul</a></b><div>v1, v2<br><i>Performs multiplication.</i></div>
 <b>ne</b><div>v1, v2<br><i>conditional not-equal to</i></div>
 <b>noise</b><div>gain<br><i>White noise generator.</i></div>
+<b>nsmp</b><div>trig (f), index (f), sr (f), ini (s), wav (s)<br><i>Nanosamp sampler. See soundpipe docs.</i></div>
 <b><a href="/learn/ugens_osc">osc</a></b><div>freq, amp, phase, ft name<br><i>Wavetable lookup oscillator</i></div>
 <b><a href="/learn/ugens_oscmorph2">oscmorph2</a></b><div>freq, amp, wtpos, phase, ft1, ft2<br><i>2-table morphing oscillator</i></div>
 <b><a href="/learn/ugens_oscmorph4">oscmorph4</a></b><div>freq, amp, wtpos, phase, ft1, ft2, ft3, ft4<br><i>4-table morphing oscillator</i></div>
@@ -108,6 +116,7 @@
 <b>pan</b><div>in, pan<br><i>Equal power panning. -1 = hardL 1 = hardR</i></div>
 <b>panst</b><div>left signal (f), right signal (f), pan (f)<br><i>Stereo panning.</i></div>
 <b>pareq</b><div>in, freq, boost, Q, mode(0=peak, 1=low shelf, 2= high shelf)<br><i>parametric equalizer</i></div>
+<b>paulstretch</b><div>stretch (F), window size (F), tbl (s)<br><i>Paulstretch algorithm</i></div>
 <b>pdhalf</b><div>amount -1 to 1<br><i>casio phasor distortion</i></div>
 <b>peaklim</b><div>input, atk, rel, thresh db<br><i>peak limiter</i></div>
 <b>phaser</b><div>inl, in2, max notch, min notch, width, notch freq, depth, fdbk, invert, lvl, lfobpm<br><i>stereo phaser</i></div>
@@ -117,9 +126,11 @@
 <b>port</b><div>htime (0.02)<br><i>Applies portamento to a signal.</i></div>
 <b>pos</b><div><i>returns playing time, in seconds</i></div>
 <b><a href="/learn/ugens_posc3">posc3</a></b><div>freq, amp, ftable<br><i>high-precision oscillator with cubic interpolation</i></div>
+<b>print</b><div>val (f/s) label (s)<br><i>prints values to terminal</i></div>
 <b><a href="/learn/ugens_/prop">prop</a></b><div>bpm, prop string<br><i>Parses prop code to produce a set of triggers</i></div>
 <b><a href="/learn/ugens_/pregisters">pset</a></b><div>val, num<br><i>p register set</i></div>
 <b>pshift</b><div>in, shift (semitones), window size (samps), xfade (samps)<br><i>pitch shifter</i></div>
+<b>pst</b><div>tog, id, ftname<br><i>toggle a polysporth sporthlet</i></div>
 <b>ptrack</b><div>in<br><i>pitch tracking (outputs: amp, pitch)</i></div>
 <b>rand</b><div>min, max<br><i>picks random number at start time</i></div>
 <b>randh</b><div>min, max, freq<br><i>Random hold</i></div>
@@ -128,13 +139,17 @@
 <b>reson</b><div>in, freq, bw<br><i>resonator filter</i></div>
 <b>reverse</b><div>in, delay<br><i>reverse delay</i></div>
 <b>revsc</b><div>in1, in2, feedback (0.97), cutoff (10000)<br><i>Stereo reverb module from reverbsc Csound opcode.</i></div>
+<b>rms</b><div>signal (f)<br><i>Determines the root-mean-square amplitude of an audio signal</i></div>
 <b><a href="/learn/ugens_/operations">rot</a></b><div>f, f, f<br><i>Stack rotate. s: 1 2 3 -> 2 3 1</i></div>
 <b>round</b><div>v1<br><i>Performs rounding to nearest integer.</i></div>
 <b>rpt</b><div>in, trig, bpm, div, rep, bufsize (1)<br><i>Stutterer / repeater (bufsize in seconds)</i></div>
 <b>rspline</b><div>min, max, cps min, cps max<br><i>random spline generator</i></div>
 <b>samphold</b><div>in, trig<br><i>sample and hold</i></div>
 <b>saturator</b><div>in, drive, dcoffset<br><i>saturator distortion unit</i></div>
+<b>saw</b><div>freq (f), amp (f)<br><i>Band-limited sawtooth oscillator. (alias of blsaw)</i></div>
+<b>say</b><div>val (f/s)<br><i>prints string value to terminal</i></div>
 <b>scale</b><div>v1, min, max<br><i>Scales from unipolar [0, 1] to [min, max].</i></div>
+<b>scrambler</b><div>name (s), name (s)<br><i>Scramble signals between two ftables</i></div>
 <b>sdelay</b><div>delay<br><i>delay (in samples)</i></div>
 <b><a href="/learn/ugens_/variables">set</a></b><div>value, name<br><i>sets variable</i></div>
 <b>setdurs</b><div>size<br><i>set total duration (in samples)</i></div>
@@ -144,6 +159,7 @@
 <b>slick</b><div>ftname<br><i>picks a string randomly from string list</i></div>
 <b>smoothdelay</b><div>in(f) fdbk(f) del(f) maxdel(f) interp<br><i>smooth delay line</i></div>
 <b>sqrt</b><div>in<br><i>square root</i></div>
+<b>square</b><div>freq (f) width (f) amp (f)<br><i>Band-limited square oscillator with pulse-width (alias of blsquare)</i></div>
 <b>sr</b><div><i>Returns the sample rate</i></div>
 <b>srand</b><div>seed<br><i>seed internal RNG</i></div>
 <b>streson</b><div>in, frequency, gain<br><i>String resonator filter</i></div>
@@ -166,12 +182,15 @@
 <b>thresh</b><div>in, thresh, mode<br><i>detect threshold crossings. mode: 0=from below, 1=above, 2=both</i></div>
 <b>tick</b><div><i>trigger at start of file. only use once</i></div>
 <b>timer</b><div>trig<br><i>timer</i></div>
+<b>tin</b><div>(none)<br><i>Read trigger from STDIN.</i></div>
 <b>tog</b><div>trig<br><i>toggle switch that can be triggered on/off</i></div>
 <b>tone</b><div>in, cutoff<br><i>simple one-pole low pass filter</i></div>
 <b>tphasor</b><div>trig, freq, phase<br><i>Triggerable normalized sawtooth wave.</i></div>
 <b>tport</b><div>trig, htime<br><i>Applies portamento to a signal with triggerable reset.</i></div>
 <b>tprop</b><div>trig, bpm, code<br><i>prop with a triggerable reset</i></div>
 <b>trand</b><div>trig, min, max<br><i>triggerable RNG</i></div>
+<b>tri</b><div>freq (f) amp (f)<br><i>Band-limited triangle oscillator (alias of bltriangle)</i></div>
+<b>triangle</b><div>freq (f) amp (f)<br><i>Band-limited triangle oscillator (alias of bltriangle)</i></div>
 <b>tseg</b><div>trig, val, dur, curve, init<br><i>trigger segment</i></div>
 <b><a href="/learn/ugens_tseq">tseq</a></b><div>trig, mode, ft name<br><i>Triggered sequencer. modes: 0 = normal, 1 = shuffle.</i></div>
 <b>tset</b><div>index, value, table<br><i>Set value of table</i></div>
