@@ -279,6 +279,7 @@ if (editorArea != null) {
 			'Ctrl-.': stop,
 			// 'Ctrl-.': tglPlay,
 			'Ctrl-Space': updateCandidateList,
+			'Ctrl-I': updateCandidateList,
 		}
 	});
 	editor.on("keyHandled", updateTooltip);
