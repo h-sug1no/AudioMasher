@@ -18,9 +18,9 @@
 <b><a href="/learn/ugens_bal">bal</a></b><div>reference, in<br><i>match the input's amplitude the reference's amplitude</i></div>
 <b><a href="/learn/ugens_biscale">biscale</a></b><div>v1, min, max<br><i>Scales from bipolar [-1, 1] to [min, max].</i></div>
 <b><a href="/learn/ugens_bitcrush">bitcrush</a></b><div>bitdepth (8), samplerate (10000)<br><i>bitcrusher. bitdepth: 1 - 16</i></div>
-<b><a href="/learn/ugens_blsaw">blsaw</a></b><div>freq, amp<br><i>Band-limited sawtooth oscillator</i></div>
-<b><a href="/learn/ugens_blsquare">blsquare</a></b><div>freq, amp, width (0.5)<br><i>Band-limited square oscillator with pulse-width</i></div>
-<b><a href="/learn/ugens_bltriangle">bltriangle</a></b><div>freq, amp<br><i>Band-limited triangle oscillator</i></div>
+<b><a href="/learn/ugens_blsaw">blsaw</a></b><div>freq (f), amp (f)<br><i>Band-limited sawtooth oscillator (aliases: [saw])</i></div>
+<b><a href="/learn/ugens_blsquare">blsquare</a></b><div>freq (f), amp (f), width (f)(0.5)<br><i>Band-limited square oscillator with pulse-width (aliases: [square])</i></div>
+<b><a href="/learn/ugens_bltriangle">bltriangle</a></b><div>freq (f), amp (f)<br><i>Band-limited triangle oscillator (aliases: [tri, triangle])</i></div>
 <b><a href="/learn/ugens_bpm2dur">bpm2dur</a></b><div>bpm<br><i>convert bpm to duration (seconds)</i></div>
 <b><a href="/learn/ugens_bpm2rate">bpm2rate</a></b><div>bpm<br><i>convert bpm to rate (Hertz)</i></div>
 <b><a href="/learn/ugens_branch">branch</a></b><div>gate, sig1, sig2<br><i>returns signal based on state of gate (0 = sig1, 1 = sig2)</i></div>
@@ -146,7 +146,7 @@
 <b>rspline</b><div>min, max, cps min, cps max<br><i>random spline generator</i></div>
 <b>samphold</b><div>in, trig<br><i>sample and hold</i></div>
 <b>saturator</b><div>in, drive, dcoffset<br><i>saturator distortion unit</i></div>
-<b>saw</b><div>freq (f), amp (f)<br><i>Band-limited sawtooth oscillator. (alias of blsaw)</i></div>
+<b><a href="/learn/ugens_blsaw">saw</a></b><div>freq (f), amp (f)<br><i>Band-limited sawtooth oscillator (alias of: blsaw)</i></div>
 <b>say</b><div>val (f/s)<br><i>prints string value to terminal</i></div>
 <b>scale</b><div>v1, min, max<br><i>Scales from unipolar [0, 1] to [min, max].</i></div>
 <b>scrambler</b><div>name (s), name (s)<br><i>Scramble signals between two ftables</i></div>
@@ -159,7 +159,7 @@
 <b>slick</b><div>ftname<br><i>picks a string randomly from string list</i></div>
 <b>smoothdelay</b><div>in(f) fdbk(f) del(f) maxdel(f) interp<br><i>smooth delay line</i></div>
 <b>sqrt</b><div>in<br><i>square root</i></div>
-<b>square</b><div>freq (f) width (f) amp (f)<br><i>Band-limited square oscillator with pulse-width (alias of blsquare)</i></div>
+<b><a href="/learn/ugens_blsquare">square</a></b><div>freq (f), amp (f), width (f)(0.5)<br><i>Band-limited square oscillator with pulse-width (alias of: blsquare)</i></div>
 <b>sr</b><div><i>Returns the sample rate</i></div>
 <b>srand</b><div>seed<br><i>seed internal RNG</i></div>
 <b>streson</b><div>in, frequency, gain<br><i>String resonator filter</i></div>
@@ -189,8 +189,8 @@
 <b>tport</b><div>trig, htime<br><i>Applies portamento to a signal with triggerable reset.</i></div>
 <b>tprop</b><div>trig, bpm, code<br><i>prop with a triggerable reset</i></div>
 <b>trand</b><div>trig, min, max<br><i>triggerable RNG</i></div>
-<b>tri</b><div>freq (f) amp (f)<br><i>Band-limited triangle oscillator (alias of bltriangle)</i></div>
-<b>triangle</b><div>freq (f) amp (f)<br><i>Band-limited triangle oscillator (alias of bltriangle)</i></div>
+<b><a href="/learn/ugens_bltriangle">tri</a></b><div>freq (f), amp (f)<br><i>Band-limited triangle oscillator (alias of: bltriangle)</i></div>
+<b><a href="/learn/ugens_bltriangle">triangle</a></b><div>freq (f), amp (f)<br><i>Band-limited triangle oscillator (alias of: bltriangle)</i></div>
 <b>tseg</b><div>trig, val, dur, curve, init<br><i>trigger segment</i></div>
 <b><a href="/learn/ugens_tseq">tseq</a></b><div>trig, mode, ft name<br><i>Triggered sequencer. modes: 0 = normal, 1 = shuffle.</i></div>
 <b>tset</b><div>index, value, table<br><i>Set value of table</i></div>

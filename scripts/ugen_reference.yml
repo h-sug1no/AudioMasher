@@ -100,19 +100,22 @@ bitcrush:
   Outputs: 1
 blsaw:
   Link: blsaw
-  Args: [freq, amp]
+  Args: [freq (f), amp (f)]
   Description: Band-limited sawtooth oscillator
   Outputs: 1
+  Aliases: [saw]
 blsquare:
   Link: blsquare
-  Args: [freq, amp, width (0.5)]
+  Args: [freq (f), amp (f), width (f)(0.5)]
   Description: Band-limited square oscillator with pulse-width
   Outputs: 1
+  Aliases: [square]
 bltriangle:
   Link: bltriangle
-  Args: [freq, amp]
+  Args: [freq (f), amp (f)]
   Description: Band-limited triangle oscillator
   Outputs: 1
+  Aliases: [tri, triangle]
 bpm2dur:
   Link: bpm2dur
   Args: [bpm]
@@ -851,10 +854,6 @@ rms:
   Args: [signal (f)]
   Outputs: 1
   Description: Determines the root-mean-square amplitude of an audio signal
-saw:
-  Args: [freq (f), amp (f)]
-  Outputs: 1
-  Description: Band-limited sawtooth oscillator. (alias of blsaw)
 say:
   Args: [val (f/s)]
   Outputs: 1
@@ -863,19 +862,7 @@ scrambler:
   Args: [name (s), name (s)]
   Outputs: 1
   Description: Scramble signals between two ftables
-square:
-  Args: [freq (f) width (f) amp (f)]
-  Outputs: 1
-  Description: Band-limited square oscillator with pulse-width (alias of blsquare)
 tin:
   Args: [(none)]
   Outputs: 1
   Description: Read trigger from STDIN.
-tri:
-  Args: [freq (f) amp (f)]
-  Outputs: 1
-  Description: Band-limited triangle oscillator (alias of bltriangle)
-triangle:
-  Args: [freq (f) amp (f)]
-  Outputs: 1
-  Description: Band-limited triangle oscillator (alias of bltriangle)

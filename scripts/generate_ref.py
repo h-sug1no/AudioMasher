@@ -3,7 +3,24 @@ import yaml, cgi
 refFile = open('ugen_reference.yml')
 data = yaml.load(refFile)
 refFile.close()
-for ugen in data: data[ugen].update({'name': ugen})
+
+adata = {}
+for ugen in data:
+	ugendata = data[ugen];
+	if 'Aliases' in ugendata:
+		aliases = ugendata['Aliases']
+		for augen in aliases:
+			t = {}
+			t.update(ugendata)
+			t.update({'name': augen, 'AliasOf': ugen})
+			tdesc = ugendata['Description']
+			t.update({'Description': tdesc + ' (alias of: ' + ugen + ')'})
+			adata[augen] = t
+		data[ugen].update({'Description': tdesc + ' (aliases: ' + str(aliases).replace('\'', '') + ')'})
+		del ugendata['Aliases']
+	data[ugen].update({'name': ugen})
+data.update(adata)
+
 data = [(data[k]) for k in sorted(data)]
 
 ######################################
@@ -59,6 +76,8 @@ for ugen in data:
 	jsUgen += " ], 'Outputs': " + str(ugen['Outputs'])
 	if 'Link' in ugen:
 		jsUgen += " , 'Link': '" + ugen['Link'] + "'"
+	if 'AliasOf' in ugen:
+		jsUgen += " , 'AliasOf': '" + ugen['AliasOf'] + "'"
 	jsUgen += " , 'Description': '" + ugen['Description'].replace("'","\\'") + "'}"
 	jsUgens.append(jsUgen)
 

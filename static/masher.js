@@ -248,11 +248,12 @@ function updateTooltip() {
 	if ("Args" in info) {
 		out += info["Args"].join(", ") + " ";
 	}
+	const aWord = info.AliasOf || word;
 	const learnRef = ("Link" in info)
 	  ? `<a href="/learn${info.Link.startsWith('/') ? info.Link : `/ugens_${info.Link}`}" target="__tooltip_learn_${info.Link}__"><b>${word}</b></a>`
 	  : `<b>${word}</b>`;
 	out += learnRef + "<br><i>" + info["Description"] + "</i>";
-	out += `<br><br><a class="soundpipe-doc" href="${soundpipeDocsRoot}${word}.html" target="__soundpipe_doc_${word}__">soundpipe/doc/${word}</a>`
+	out += `<br><br><a class="soundpipe-doc" href="${soundpipeDocsRoot}${aWord}.html" target="__soundpipe_doc_${aWord}__">soundpipe/doc/${aWord}</a>`
 	updateTooltipPos();
 	showTooltip(out);
 }
