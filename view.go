@@ -120,7 +120,7 @@ func ViewSporthEx(w http.ResponseWriter, r *http.Request) {
 	ViewSporthExByUrl(w, r, url)
 }
 
-func ViewSporthling(w http.ResponseWriter, r *http.Request) {
+func ViewSporthlings(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	id := params["id"]
 	url := "https://paulbatchelor.github.io/res/sporthlings/" + id + "/" + id + ".sp"
