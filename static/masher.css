@@ -120,8 +120,9 @@ a.tab_thumb {
 .sliderRange { width: 53.2%; }
 .sliderDispl { width: 23.2%; text-align: left; }
 
-.sporthex_container {
-	margin: 1rem;
+.sporthex_container,
+.sporthlings_container {
+	margin: 0.3rem;
 }
 
 #controls {
