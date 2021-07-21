@@ -91,11 +91,8 @@ func ViewPatch(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func ViewSporthEx(w http.ResponseWriter, r *http.Request) {
+func ViewSporthExByUrl(w http.ResponseWriter, r *http.Request, url string) {
 	var err error
-	params := mux.Vars(r)
-	url := "https://raw.githubusercontent.com/PaulBatchelor/Sporth/master/examples/" + params["id"]
-
 	resp, err := http.Get(url)
 	if err != nil {
 		// handle error
@@ -115,6 +112,19 @@ func ViewSporthEx(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func ViewSporthEx(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	url := "https://raw.githubusercontent.com/PaulBatchelor/Sporth/master/examples/" + params["id"]
+	ViewSporthExByUrl(w, r, url)
+}
+
+func ViewSporthling(w http.ResponseWriter, r *http.Request) {
+	params := mux.Vars(r)
+	id := params["id"]
+	url := "https://paulbatchelor.github.io/res/sporthlings/" + id + "/" + id + ".sp"
+	ViewSporthExByUrl(w, r, url)
 }
 
 func ViewUser(w http.ResponseWriter, r *http.Request) {

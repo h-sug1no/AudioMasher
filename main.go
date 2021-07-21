@@ -20,6 +20,7 @@ func main() {
 	router.HandleFunc("/new", ViewNew)
 	router.HandleFunc("/patch/{id}", ViewPatch)
 	router.HandleFunc("/sporthex/{id}", ViewSporthEx)
+	router.HandleFunc("/sporthlings/{id}", ViewSporthling)
 	router.HandleFunc("/user/{user}", ViewUser)
 	router.HandleFunc("/continue", ViewContinue)
 	router.HandleFunc("/browse", ViewBrowse)
